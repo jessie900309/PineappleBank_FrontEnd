@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
     // 全螢幕(我不喜翻所以註解掉了)
     // SystemChrome.setEnabledSystemUIOverlays([]);
 
+    // 登入功能的參考寫法
     //
     // return StreamProvider<Users>.value(
     //   initialData: null,
