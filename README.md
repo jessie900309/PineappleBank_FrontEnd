@@ -21,6 +21,7 @@
 ## About PineappleBank
 
 * [PineappleBank](https://github.com/oscar1234456/PineappleBank)
+* [](https://github.com/oscar1234456/solution_challenge_JOAS)
 
 ### English Version
 
