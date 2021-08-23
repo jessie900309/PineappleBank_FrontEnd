@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pineapplebank_frontend/screens/home/home_ProfilePage_foodTrace.dart';
+import 'package:pineapplebank_frontend/util/CustomSliverTabBar.dart';
+import 'package:pineapplebank_frontend/util/constants_styleDesign.dart';
 
 
 class ProfilePage extends StatefulWidget {
@@ -48,13 +50,11 @@ class _ProfilePageState extends State<ProfilePage> {
             headerSliverBuilder: (context, bool) {
               return [
                 SliverAppBar(
-
                   //基本AppBar屬性
                   elevation: 0.0,//無陰影
                   leading: ABleading,
                   title: UserName,
                   actions: [AppBarBtn,],
-
                   //SliverAppBar特殊屬性
                   floating: true,//往下拉時 true:直接出現Bar false: 下方的東西都滑到底才出現Bar
                   pinned: true,//往上滑時 true:基本AppBar固定 false: AppBar會完全收起
@@ -66,18 +66,16 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   // 可以搭配stretch: true 跟 FlexibleSpaceBar()的stretchModes屬性作更多變化
                 ),
-                // SliverPersistentHeader(
-                //   pinned: true,
-                //   delegate: SliverTabBarDelegate(
-                //     TabBar(
-                //       tabs: tabTitle.map((f) => Tab(text: f)).toList(),
-                //       indicatorColor: TabBarTextColor[1],
-                //       unselectedLabelColor: TabBarTextColor[0],
-                //       labelColor: TabBarTextColor[1],
-                //     ),
-                //     color: PineappleWhite,
-                //   ),
-                // ),
+                SliverPersistentHeader(
+                  pinned: true,
+                  delegate: SliverTabBarDelegate(
+                    TabBar(
+                      tabs: tabTitle.map((f) => Tab(text: f)).toList(),
+                      indicatorColor: TabIndicatorColor,
+                    ),
+                    color: TabBG,
+                  ),
+                ),
               ];//return :SliverAppBar+SliverPersistentHeader
             },
             //body是子分頁的部分，寫在home_ProfilePage_foodTrace、
@@ -91,45 +89,4 @@ class _ProfilePageState extends State<ProfilePage> {
         )
     );
   }
-}
-
-// 實作可以滑動的TabBar
-//
-// (實作SliverPersistentHeaderDelegate)
-// override -> build,shouldRebuild,maxExtent,minExtent
-// SliverPersistentHeaderDelegate可以有好幾個OuO
-class SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
-  final TabBar widget;
-  final Color color;
-  const SliverTabBarDelegate(this.widget, {required this.color})
-      : assert(widget != null);
-
-
-  @override
-  Widget build(
-    BuildContext context, double shrinkOffset, bool overlapsContent) {
-      return new Container(
-        child: widget,
-        color: color,
-      );
-  }
-
-  //產生實例時，還有其他可以滑動的子部件 => true 讓畫面可以重新build
-  //平常沒事就 => false
-  @override
-  bool shouldRebuild(SliverTabBarDelegate oldDelegate) {
-    return false;
-  }
-
-  //maxExtent 初始展開最大高度
-  @override
-  double get maxExtent => widget.preferredSize.height;
-
-  //minExtent 上滑時 會至少保留minExtent高度
-  @override
-  double get minExtent => widget.preferredSize.height;
-
-  // maxExtent跟minExtent一樣 => 你的Bar不會因為滑動伸縮 是個安分的Bar
-  //widget.preferredSize.height 取得預設Bar高度
-
 }

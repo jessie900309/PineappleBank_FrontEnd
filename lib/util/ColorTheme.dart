@@ -7,30 +7,33 @@ import 'package:flutter/material.dart';
 //
 //
 const Pineapple100 = Color(0xFFffdead);
-const Pineapple50 = Color(0xFFFFD180);
+const Pineapple50 = Color(0xFFffd180);
+const Pineapple25 = Color(0xFFffbb77);
 const Pineapple300 = Colors.orangeAccent;
 const Pineapple400 = Colors.orange;
 const Pineapple900 = Colors.brown;
+const PineappleNone = Colors.grey;
 const PineappleWhite = Colors.white;
 const PineappleBackgroundWhite = Colors.white;
 const PineappleErrorRed = Colors.deepOrange;
-final ColorScheme PineappleColor = ColorScheme(
+final PineappleColor = ColorScheme(
+  brightness: Brightness.light,
+  background: Pineapple100,
   primary: Pineapple400,
   primaryVariant: Pineapple900,
   secondary: Pineapple100,
   secondaryVariant: Pineapple900,
   surface: PineappleWhite,
-  background: Pineapple100,
   error: PineappleErrorRed,
   onPrimary: Pineapple900,
   onSecondary: Pineapple900,
   onSurface: Pineapple900,
   onBackground: Pineapple900,
   onError: PineappleWhite,
-  brightness: Brightness.light,
+
 );
 ThemeData PineappleTWTheme() {
-  final ThemeData base = ThemeData.light();
+  final base = ThemeData.light();
   return base.copyWith(
     colorScheme: PineappleColor,
     toggleableActiveColor: Pineapple300,
@@ -40,9 +43,20 @@ ThemeData PineappleTWTheme() {
     scaffoldBackgroundColor: Pineapple100,
     cardColor: PineappleBackgroundWhite,
     errorColor: PineappleErrorRed,
+    unselectedWidgetColor: PineappleNone,
+    tabBarTheme: TabBarTheme(
+      labelColor: Pineapple25,
+      unselectedLabelColor: PineappleNone,
+    ),
     buttonTheme: ButtonThemeData(
       colorScheme: PineappleColor,
       textTheme: ButtonTextTheme.normal,
+    ),
+    dialogTheme: DialogTheme(
+      backgroundColor: PineappleWhite,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),
     ),
   );
 }
