@@ -20,7 +20,8 @@
 
 ## About PineappleBank
 
-因為涉及隱私問題，功能部份的code不給你看_(:3」∠)_
+* [PineappleBank](https://github.com/oscar1234456/PineappleBank)
+* [](https://github.com/oscar1234456/solution_challenge_JOAS)
 
 ### English Version
 
