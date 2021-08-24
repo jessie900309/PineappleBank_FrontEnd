@@ -29,19 +29,16 @@ class CustomAlertDia_FirstInfo extends StatelessWidget{
   final String DiaTitle;
   final String DiaContent;
 
-  const CustomAlertDia_FirstInfo(
-      {Key? key,
-      required this.DiaContent,
-      required this.DiaTitle,
+  const CustomAlertDia_FirstInfo({Key key,
+    this.DiaContent,
+    this.DiaTitle,
   });
 
   @override
   Widget build(BuildContext context){
 
     final BackBtn = TextButton(
-      onPressed: () {
-        Navigator.pop(context);
-      },
+      onPressed: () {Navigator.pop(context);},
       child: DiaText_info,
     );
 
@@ -71,20 +68,17 @@ class CustomAlertDia_SceInfo extends StatelessWidget{
   final String DiaTitle;
   final String DiaContent;
 
-  const CustomAlertDia_SceInfo(
-      {Key? key,
-        required this.DiaContent,
-        required this.DiaTitle,
-      });
+  const CustomAlertDia_SceInfo({
+    Key key,
+    this.DiaContent,
+    this.DiaTitle,
+  });
 
   @override
   Widget build(BuildContext context){
 
     final BackBtn = TextButton(
-      onPressed: () {
-        Navigator.pop(context);
-        Navigator.pop(context);
-      },
+      onPressed: () {Navigator.pop(context);Navigator.pop(context);},
       child: DiaText_info,
     );
 
@@ -109,21 +103,17 @@ class CustomAlertDia_Check extends StatelessWidget{
   final String LeftXText;
   final TextButton RightBtn;
 
-  const CustomAlertDia_Check(
-      {Key? key,
-        required this.DiaContent,
-        required this.DiaTitle,
-        required this.LeftXText,
-        required this.RightBtn,
-      });
+  const CustomAlertDia_Check({Key key,
+    this.DiaContent,
+    this.DiaTitle,
+    this.LeftXText,
+    this.RightBtn,});
 
   @override
   Widget build(BuildContext context){
 
     final LeftXBtn = TextButton(
-      onPressed: () {
-        Navigator.pop(context);
-      },
+      onPressed: () {Navigator.pop(context);},
       child: Text(
         LeftXText,
         style: DiaOption_leftStyle,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:pineapplebank_frontend/screens/authenticate/authenticate.dart';
 import 'package:pineapplebank_frontend/screens/home/homePage.dart';
-// import 'package:pineapplebank_frontend/screens/authenticate/signinORregister.dart';
 
 class Wrapper extends StatelessWidget {
   @override
@@ -8,8 +8,11 @@ class Wrapper extends StatelessWidget {
 
     // Call Firebase Func. check 登入狀態
     // return either Home or Authenticate widget
-    // if (user == null){return SignIn();}else{return HomePage(user);}
+    // if (user == null){return Authenticate();}else{return HomePage(user);}
 
+
+    //測試階段直接導向主頁
     return HomePage();
+    // return Authenticate();
   }
 }

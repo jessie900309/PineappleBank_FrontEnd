@@ -7,7 +7,7 @@ import 'package:pineapplebank_frontend/util/AssetImgPath.dart';
 // 登入畫面
 class SignIn extends StatefulWidget {
   final Function toggleView;
-  SignIn({required this.toggleView});
+  SignIn({this.toggleView});
   @override
   _SignInState createState() => _SignInState();
 }
@@ -38,7 +38,7 @@ class _SignInState extends State<SignIn> {
     final EmailInput = TextFormField(
       keyboardType: TextInputType.multiline,
       controller: text_pinEmail,
-      validator: (val) => val!.isEmpty ? pinEmailHintText : null,
+      validator: (val) => val.isEmpty ? pinEmailHintText : null,
       onChanged: (val) {setState(() => email = val);},
       style: InputBlockTextDesign,
       cursorColor: InputColor,
@@ -48,7 +48,7 @@ class _SignInState extends State<SignIn> {
       keyboardType: TextInputType.multiline,
       controller: text_pinCode,
       obscureText: true,
-      validator: (val) => val!.length < 6 ? PasswordErrorText : null,//密碼限制(大於六個字)
+      validator: (val) => val.length < 6 ? PasswordErrorText : null,//密碼限制(大於六個字)
       onChanged: (val) {setState(() => password = val);},
       style: InputBlockTextDesign,
       cursorColor: InputColor,
@@ -186,7 +186,7 @@ class _SignInState extends State<SignIn> {
 // 註冊畫面
 class Register extends StatefulWidget {
   final Function toggleView;
-  Register({required this.toggleView});
+  Register({this.toggleView});
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -213,7 +213,7 @@ class _RegisterState extends State<Register> {
     //輸入框
     final EmailInput = TextFormField(
       keyboardType: TextInputType.multiline,
-      validator: (val) => val!.isEmpty ? pinEmailHintText : null,
+      validator: (val) => val.isEmpty ? pinEmailHintText : null,
       onChanged: (val) {
         setState(() => email = val);
       },
@@ -224,7 +224,7 @@ class _RegisterState extends State<Register> {
     final PasswordInput = TextFormField(
       keyboardType: TextInputType.multiline,
       obscureText: true,
-      validator: (val) => val!.length < 6 ? PasswordErrorText : null,
+      validator: (val) => val.length < 6 ? PasswordErrorText : null,
       onChanged: (val) {
         setState(() => password = val);
       },

@@ -26,15 +26,8 @@ class _ProfilePageState extends State<ProfilePage> {
     //expandedHeight =
     final AppBarFiexHeight = ScreenH * 4 / 7;
 
-    final UserRadius = ScreenW / 4;
-    final PineBtnDesign_size = UserRadius * 4 / 5;
-    final PineRadius = ScreenW / 10;
-    final TextBlockW = ScreenW * 4 / 10;
-    final TextBlockH = 40.0;
-    final ContentBlockW = ScreenW * 9 / 10;
-    final ContentBlockH = 50.0;
-    final ContentBlockW2 = ScreenW * 8 / 10;
-    final ContentBlockH2 = 100.0;
+
+
 
 
     final ABleading = Container();
