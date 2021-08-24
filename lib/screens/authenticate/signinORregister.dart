@@ -131,7 +131,7 @@ class _SignInState extends State<SignIn> {
           width: LogoRadius,
           height: LogoRadius,
           child: Image(
-            image: AssetImage(AppIconImgPath[0]),
+            image: AssetImage(AppIconPath),
           ),
         ),
         WidgetSpace,WidgetSpace,
@@ -294,7 +294,7 @@ class _RegisterState extends State<Register> {
           width: LogoRadius,
           height: LogoRadius,
           child: Image(
-            image: AssetImage(AppIconImgPath[1]),
+            image: AssetImage(AppIconSmilePath),
           ),
         ),
         WidgetSpace,WidgetSpace,

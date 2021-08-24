@@ -2,10 +2,8 @@
 const noPhotoImgPath = "images/noPhoto.png";
 const UserAImgPath = "images/UserA.png";
 const UserBImgPath = "images/UserB.png";
-const AppIconImgPath = [
-  "images/ic_launcher.png",
-  "images/ic_launcher_smile.png",
-];
+const AppIconPath = "images/ic_launcher.png";
+const AppIconSmilePath = "images/ic_launcher_smile.png";
 const PineappleBtnImgPath = "images/BtnPineapple.png";
 //ProfilePage_Badge
 const BadgeImgPath = [//0246有(彩色) 1357無(灰白)

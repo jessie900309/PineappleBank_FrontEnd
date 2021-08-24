@@ -20,14 +20,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   //初始頁面 foodFocusPage
-  int _currentIndex = 0;
+  int _currentIndex = 2;
 
   //底部導航欄
   final List<Widget> _children = [
+    MapPage(), //地圖 home_MapPage 周圍的活動&食物(GoogleMap)
+    foodFindEventPage(), //活動 home_FindEventPage 所有活動 可查詢篩選
     foodFocusPage(), //小房子 home_FocusPage 主頁:以地區和時間為主
     foodFindFoodPage(), //披薩 home_FindFoodPage 所有食物 可查詢篩選
-    foodFindEventPage(), //活動 home_FindEventPage 所有活動 可查詢篩選
-    MapPage(), //地圖 home_MapPage 周圍的活動&食物(GoogleMap)
     ProfilePage(), //人頭 home_ProfilePage 個人頁面
   ];
 
@@ -45,26 +45,25 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        iconSize: 24.0,
         currentIndex: _currentIndex,
         // this will be set when a new tab is tapped
         onTap: onTabTapped,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 30,),
-            label: "Food",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(customIcon.pizza, size: 24,),
-            label: "Food",
+            icon: Icon(Icons.place, size:30),
+            label: "Places",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event, size: 30,),
             label: "Event",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.place, size:30),
-            label: "Places",
+            icon: Icon(Icons.home, size: 30,),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(customIcon.pizza, size: 24,),
+            label: "Food",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person, size:30),

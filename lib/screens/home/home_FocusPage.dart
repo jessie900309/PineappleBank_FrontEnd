@@ -41,9 +41,9 @@ class _foodFocusPageState extends State<foodFocusPage> {
             showDialog<void>(context: context, builder: (context) => TRYYY);
           },
           child: Text(
-            "OuO",
+            "Test Dialog",
             style: TextStyle(
-              fontSize: 50.0,
+              fontSize: 35.0,
             ),
           ),
         ),

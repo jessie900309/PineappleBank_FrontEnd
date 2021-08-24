@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pineapplebank_frontend/screens/home/home_ProfilePage_eventTrace.dart';
 import 'package:pineapplebank_frontend/screens/home/home_ProfilePage_foodTrace.dart';
 import 'package:pineapplebank_frontend/util/CustomSliverTabBar.dart';
 import 'package:pineapplebank_frontend/util/constants_styleDesign.dart';
@@ -26,13 +27,46 @@ class _ProfilePageState extends State<ProfilePage> {
     //expandedHeight =
     final AppBarFiexHeight = ScreenH * 4 / 7;
 
+    //左上角AppIcon
+    final PineRadius = ScreenW / 10;
+    final AppIcon_circle = Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        Container(
+          width: PineRadius,
+          height: PineRadius,
+          decoration: IconBGDesign[0],
+        ),
+        Container(
+          width: PineRadius - 4,
+          height: PineRadius - 4,
+          decoration: IconBGDesign[1],
+        ),
+        Container(//鳳梨本體
+          width: PineRadius - 10,
+          height: PineRadius - 10,
+          decoration: IconBGDesign[2],
+        ),
+      ],
+    );
+    final AppBarLeading = Row(
+      children: <Widget>[
+        littlePadding,
+        AppIcon_circle,
+      ],
+    );
 
+    //正上方用戶名
+    final UserName = Text(
+      "User Name", // get user name
+      style: PageTitleStyle,
+    );
 
-
-
-    final ABleading = Container();
-    final UserName = Container();
+    //右上角設定按鈕
+    // final MsgBtn = Container();
     final AppBarBtn = Container();
+
+
     final UserInfo = Container();
 
 
@@ -45,7 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 SliverAppBar(
                   //基本AppBar屬性
                   elevation: 0.0,//無陰影
-                  leading: ABleading,
+                  leading: AppBarLeading,
                   title: UserName,
                   actions: [AppBarBtn,],
                   //SliverAppBar特殊屬性
@@ -66,12 +100,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       tabs: tabTitle.map((f) => Tab(text: f)).toList(),
                       indicatorColor: TabIndicatorColor,
                     ),
-                    color: TabBG,
                   ),
                 ),
-              ];//return :SliverAppBar+SliverPersistentHeader
+              ];//return :SliverAppBar + SliverPersistentHeader
             },
-            //body是子分頁的部分，寫在home_ProfilePage_foodTrace、
+            //body是子分頁的部分，寫在home_ProfilePage_foodTrace、home_ProfilePage_eventTrace
             body: TabBarView(
               children: [
                 foodTracePage(),

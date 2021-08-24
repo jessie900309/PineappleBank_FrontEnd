@@ -6,20 +6,21 @@ import 'package:flutter/material.dart';
 // override -> build,shouldRebuild,maxExtent,minExtent
 // SliverPersistentHeaderDelegate可以有好幾個OuO
 
+const TabBGcolor = Colors.white;
+
 class SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   final TabBar widget;
-  final Color color;  //TabBar背景色
+  // final Color color;
   const SliverTabBarDelegate(
       this.widget,
-      {this.color}
+      // {this.color,} //讓TabBar背景色隨頁面自訂
       ) : assert(widget != null);
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new Container(
       child: widget,
-      color: color,
+      color: TabBGcolor,
     );
   }
 
@@ -38,7 +39,7 @@ class SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   double get minExtent => widget.preferredSize.height;
 
-// maxExtent跟minExtent一樣 => 你的Bar不會因為滑動伸縮 是個安分的Bar
-//widget.preferredSize.height 取得預設Bar高度
+  // maxExtent跟minExtent一樣 => 你的Bar不會因為滑動伸縮 是個安分的Bar
+  // widget.preferredSize.height 取得預設Bar高度
 
 }
